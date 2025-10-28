@@ -35,7 +35,7 @@ jobs:
       # Step 3: Cài đặt dependencies cho service "auth"
       # `npm ci` sẽ sử dụng cache nếu có, giúp tiết kiệm thời gian
       - name: Install auth dependencies
-        run: npm install --prefix auth
+        run: npm ci --prefix auth
 
       # Step 4: Tạo file .env cho môi trường test của service "auth"
       # Tối ưu: Sử dụng MongoDB in-memory, không cần URI thật

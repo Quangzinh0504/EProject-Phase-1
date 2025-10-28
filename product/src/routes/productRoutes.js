@@ -10,4 +10,9 @@ router.post("/buy", isAuthenticated, productController.createOrder);
 router.get("/", isAuthenticated, productController.getProducts);
 
 
+//xem san pahm bang id
+router.get("/:id", isAuthenticated, productController.getid);
+
+
+router.get("/:id", isAuthenticated, productController.getProductsID);
 module.exports = router;

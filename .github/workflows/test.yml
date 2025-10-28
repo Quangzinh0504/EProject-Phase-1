@@ -79,7 +79,7 @@ jobs:
 
       # Step 3: Cài đặt dependencies cho service "product"
       - name: Install product dependencies
-        run: npm install --prefix product
+        run: npm ci --prefix product
 
       # Step 4: Tạo file .env cho môi trường test của service "product"
       # Tối ưu: Không cần thông tin về auth service thật hay RabbitMQ thật
@@ -96,7 +96,7 @@ jobs:
       - name: Start auth service for product tests
         run: |
           cd auth
-          npm install
+          npm ci
           echo "MONGODB_AUTH_URI=mongodb://localhost:27017/auth_test" > .env
           echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> .env
           npm start &
